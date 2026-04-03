@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Page as HTML",
+  "version": "1.0.0",
+  "description": "Copy the current page's content as clean HTML to clipboard — paste into any AI agent chat.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "copy-page-as-html@local",
+      "strict_min_version": "109.0"
+    }
+  },
+
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "scripting"
+  ],
+
+  "action": {
+    "default_title": "Copy Page as HTML",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

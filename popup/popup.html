@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy Page as HTML</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="container" class="state-ready">
+
+      <!-- Ready state -->
+      <div class="panel" id="panel-ready">
+        <div class="page-info">
+          <span class="label">Page</span>
+          <span id="page-title" class="page-title" title="">—</span>
+        </div>
+        <label class="option-row">
+          <input type="checkbox" id="embed-images-chk" />
+          <span>Embed images as base64</span>
+        </label>
+        <button id="copy-btn" class="btn btn-primary">
+          <svg class="icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 2a2 2 0 00-2 2v1H5a2 2 0 00-2 2v9a2 2 0 002 2h8a2 2 0 002-2v-1h1a2 2 0 002-2V6a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H8zm0 2h4v1H8V4zm-3 3h10v8H5V7z"/>
+          </svg>
+          Copy as HTML
+        </button>
+      </div>
+
+      <!-- Copying state -->
+      <div class="panel" id="panel-copying">
+        <div class="status-icon spin">⏳</div>
+        <p class="status-text" id="copying-text">Copying…</p>
+      </div>
+
+      <!-- Success state -->
+      <div class="panel" id="panel-success">
+        <div class="status-icon success-icon">✓</div>
+        <p class="status-text" id="status-message">Copied!</p>
+        <p class="status-size" id="status-size"></p>
+      </div>
+
+      <!-- Error state -->
+      <div class="panel" id="panel-error">
+        <div class="status-icon error-icon">✕</div>
+        <p class="status-text">Failed to copy</p>
+        <p class="error-message" id="error-message"></p>
+        <button id="try-again-btn" class="btn btn-secondary">Try Again</button>
+      </div>
+
+      <!-- Restricted state -->
+      <div class="panel" id="panel-restricted">
+        <div class="status-icon restricted-icon">🔒</div>
+        <p class="status-text">Can't copy this page</p>
+        <p class="restricted-message" id="restricted-message">
+          Browser pages and extension pages cannot be copied.
+        </p>
+      </div>
+
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
