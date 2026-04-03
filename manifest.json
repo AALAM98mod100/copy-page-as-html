@@ -9,9 +9,7 @@
       "id": "copy-page-as-html@local",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "required": ["usageStats", "technicalData"],
-        "usageStats": false,
-        "technicalData": false
+        "required": ["none"]
       }
     },
     "gecko_android": {
